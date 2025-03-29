@@ -1,0 +1,123 @@
+body {
+  background: rgb(13, 17, 22);
+}
+
+.mirror-wrapper {
+  position: relative;
+  display: block;
+  margin: auto;
+  height: 779px;
+  width: 438px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.mirror-wrapper .slide {
+  box-shadow: 0 4px 20px 2px rgba(0, 0, 0, 0.4);
+  max-width: 438px;
+  display: grid;
+  height: auto;
+  margin: auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.mirror-wrapper .slide .slide-items {
+  position: relative;
+  grid-area: 1/1;
+  z-index: -1;
+}
+.mirror-wrapper .slide .slide-items > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.mirror-wrapper .slide .slide-items > * video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+.mirror-wrapper .slide .slide-items > * img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+.mirror-wrapper .slide .slide-items > *.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: initial;
+}
+.mirror-wrapper .slide .slide-items > *.active video, .mirror-wrapper .slide .slide-items > *.active img {
+  display: block;
+}
+.mirror-wrapper .slide .slide-nav {
+  grid-area: 1/1;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+}
+.mirror-wrapper .slide .slide-nav .slide-next {
+  justify-content: flex-end;
+}
+.mirror-wrapper .slide .slide-nav button {
+  background-color: transparent;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.mirror-wrapper .slide .slide-nav button .slide-next__icon {
+  transform: rotate(180deg);
+}
+.mirror-wrapper .slide .slide-nav button .slide-prev__icon,
+.mirror-wrapper .slide .slide-nav button .slide-next__icon {
+  width: 40px;
+}
+.mirror-wrapper .slide .slide-nav:hover button {
+  opacity: 1;
+}
+.mirror-wrapper .slide .slide-thumb {
+  display: flex;
+  grid-column: 1/3;
+  padding: 8px;
+}
+.mirror-wrapper .slide .slide-thumb > span {
+  flex: 1;
+  display: block;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  margin: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.mirror-wrapper .slide .slide-thumb > span.active::after {
+  content: "";
+  display: block;
+  height: inherit;
+  background: rgb(255, 255, 255);
+  border-radius: 3px;
+  transform: translateX(-100%);
+  animation: thumb 60s forwards linear;
+}
+
+@keyframes thumb {
+  to {
+    transform: initial;
+  }
+}
