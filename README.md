@@ -4,7 +4,7 @@
 
 A **no-scroll, tap-to-advance video player** inspired by Instagram Reels and YouTube Shorts. Built with pure HTML, SCSS, and Vanilla JavaScript.
 
-![Reels-Style Demo](social-media-stories-slider.gif)
+<img src="social-media-stories-slider.gif" width="300" />
 
 ## 👩🏻‍💻 Why I Built This
 
