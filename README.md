@@ -1,10 +1,10 @@
 # Vertical Video Slider
 
-![Reels-Style Demo](social-media-stories-slider.gif)
-
 ## 📱 Project Overview
 
 A **no-scroll, tap-to-advance video player** inspired by Instagram Reels and YouTube Shorts. Built with pure HTML, SCSS, and Vanilla JavaScript.
+
+![Reels-Style Demo](social-media-stories-slider.gif)
 
 ## 👩🏻‍💻 Why I Built This
 
